@@ -23,9 +23,9 @@ export default function Login({ navigation }) {
    * Verifica se tem usuário salvo, existindo, redireciona para a página Main
    */
   useEffect(() => {
-    AsyncStorage.getItem('user').then(user => {
-      if (user) {
-        navigation.navigate('Main', { user });
+    AsyncStorage.getItem('user').then(userFounded => {
+      if (userFounded) {
+        navigation.navigate('Main', { userFounded });
       }
     });
   }, [navigation]);
